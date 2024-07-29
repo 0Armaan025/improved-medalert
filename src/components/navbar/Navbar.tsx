@@ -32,8 +32,8 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a
               href="#"
-              style={{ fontFamily: "poppins" }}
-              className="text-2xl font-bold flex justify-center items-center flex-row text-black"
+              style={{ fontFamily: "Poppins" }}
+              className="text-2xl font-bold flex justify-center items-center flex-row text-white"
             >
               <img
                 src="https://cdn-icons-png.flaticon.com/128/3063/3063176.png"
@@ -49,22 +49,22 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4 text-xl">
               <a
                 href="#"
-                style={{ fontFamily: "poppins" }}
-                className="text-gray-800 hover:text-black px-3 py-2 rounded-md text-[1rem] font-medium"
+                style={{ fontFamily: "Poppins" }}
+                className="text-gray-200 hover:text-white px-3 py-2 rounded-md text-[1rem] font-medium"
               >
                 About
               </a>
               <a
                 href="#"
-                style={{ fontFamily: "poppins" }}
-                className="text-gray-800 hover:text-black px-3 py-2 rounded-md text-[1rem] font-medium"
+                style={{ fontFamily: "Poppins" }}
+                className="text-gray-200 hover:text-white px-3 py-2 rounded-md text-[1rem] font-medium"
               >
                 Data
               </a>
               <a
                 href="#"
-                style={{ fontFamily: "poppins" }}
-                className="text-gray-800 hover:text-black px-3 py-2 rounded-md text-[1rem] font-medium"
+                style={{ fontFamily: "Poppins" }}
+                className="text-gray-200 hover:text-white px-3 py-2 rounded-md text-[1rem] font-medium"
               >
                 FAQ
               </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
             <div className="ml-4 flex items-center md:ml-6">
               <a
                 href="#"
-                className="text-black border-2 border-gray-800 hover:bg-white hover:text-black transition-all px-3 py-2 rounded-md text-sm font-medium"
+                className="text-white border-2 border-gray-600 hover:bg-white hover:text-black transition-all px-3 py-2 rounded-md text-sm font-medium"
               >
                 Dashboard
               </a>

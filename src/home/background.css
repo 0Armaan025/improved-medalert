@@ -1,0 +1,39 @@
+/* starry-background.css */
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.starry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 30px;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+.star:nth-child(odd) {
+  animation-duration: 1.5s;
+}
+
+.star:nth-child(even) {
+  animation-duration: 3s;
+}
