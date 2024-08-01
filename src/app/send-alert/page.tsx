@@ -1,13 +1,22 @@
 "use client";
-import React from "react";
-import "./dashboardpage.css";
+import React, { useState } from "react";
+import "./sendalertpage.css";
 import Navbar from "@/components/navbar/Navbar";
 import StarryBackground from "@/home/StarryBackground";
-import RoomComponent from "@/components/room/RoomComponent";
 
 type Props = {};
 
-const DashboardPage = (props: Props) => {
+const SendAlertPage = (props: Props) => {
+  const [alertTitle, setAlertTitle] = useState("");
+  const [alertType, setAlertType] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSendAlert = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle the send alert action here
+    console.log("Alert sent:", { alertTitle, alertType, message });
+  };
+
   return (
     <>
       <StarryBackground />
@@ -85,25 +94,53 @@ const DashboardPage = (props: Props) => {
           </nav>
         </aside>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-6 ">
           <header className="bg-[#9e9e9e] rounded-md shadow-md p-4 mb-4">
-            <h1 className="text-2xl font-semibold">Dashboard</h1>
+            <h1 className="text-2xl font-semibold">Send Alert</h1>
           </header>
 
           <main>
-            <div className="flex flex-row justify-start items-start mb-4">
-              <p className="text-gray-200">Welcome to your dashboard!</p>
-              <p className="text-gray-300 ml-2 underline-offset-1 underline cursor-pointer">
-                Add a room...
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <RoomComponent name="Name of the room" type="Type of the room" />
-              <RoomComponent name="Name of the room" type="Type of the room" />
-              <RoomComponent name="Name of the room" type="Type of the room" />
-              <RoomComponent name="Name of the room" type="Type of the room" />
-              {/* Add more RoomComponent instances as needed */}
-            </div>
+            <form onSubmit={handleSendAlert} className="space-y-4 mx-40">
+              <div>
+                <label className="block text-gray-200">Alert Title</label>
+                <input
+                  type="text"
+                  value={alertTitle}
+                  onChange={(e) => setAlertTitle(e.target.value)}
+                  className="w-full p-2 border border-gray-300 rounded mt-1 h-10"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-gray-200">Alert Type</label>
+                <select
+                  value={alertType}
+                  onChange={(e) => setAlertType(e.target.value)}
+                  className="w-full p-2 border border-gray-300 rounded mt-1"
+                  required
+                >
+                  <option value="">Select</option>
+                  <option value="incoming">Incoming</option>
+                  <option value="critical">Critical</option>
+                  <option value="predicted">Predicted</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-gray-200">Message</label>
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full p-2 border border-gray-300 rounded mt-1 h-32"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#3c465b] text-white py-2 rounded hover:bg-[#57637f] transition duration-200"
+              >
+                Send Alert
+              </button>
+            </form>
           </main>
         </div>
       </div>
@@ -111,4 +148,4 @@ const DashboardPage = (props: Props) => {
   );
 };
 
-export default DashboardPage;
+export default SendAlertPage;
